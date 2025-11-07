@@ -14,7 +14,14 @@ st.set_page_config(page_title="California Housing 地図可視化", layout="wide
 # ---------------------------
 # 0) データセットの説明（大学生向け）
 # ---------------------------
-st.title("🏠 California Housing：緯度・経度 × 住宅価格の地図可視化（Folium）")
+st.markdown(
+    """
+    <h3 style="font-size:22px; margin-bottom:10px;">
+    🏠 California Housing：緯度・経度 × 住宅価格の地図可視化（Folium）
+    </h3>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown(
     """
@@ -137,3 +144,4 @@ st_folium(m, height=620, use_container_width=True)
 # ---------------------------
 with st.expander("📈 価格（MedHouseVal）の基本統計"):
     st.write(df["MedHouseVal"].describe().to_frame().T)
+
